@@ -1,4 +1,4 @@
-function getGuessMessage(guess, numberToGuess) {
+const getGuessMessage = (guess, numberToGuess) => {
   const distanceApart = Math.abs(numberToGuess - guess);
   if (guess < numberToGuess) {
     if (distanceApart > 10) {
@@ -18,6 +18,7 @@ function getGuessMessage(guess, numberToGuess) {
 function GuessMessage({ guess, numberToGuess, numberOfGuesses }) {
   return (
     <div>
+      {guess && <p>You guessed {guess}</p>}
       {guess && <p>{getGuessMessage(guess, numberToGuess)}</p>}
       <p>Guesses so far: {numberOfGuesses}</p>
     </div>
